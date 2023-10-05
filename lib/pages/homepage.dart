@@ -22,10 +22,10 @@ class _HomePageState extends State<HomePage> {
             TextButton(child: const Text("lat long"), onPressed: () async => print(await determinePosition())),
             // TODO send
             TextButton(
-                child: const Text("setLunchTimes - kdy chodíš na O"),
+                child: const Text("setRegularLunchTimes - kdy chodíš na O"),
                 onPressed: () async => print(await getLunchTimesToSend())),
             // TODO send
-            TextButton(child: const Text("addToActive - jdeš dnes na O?"), onPressed: () {}),
+            TextButton(child: const Text("addToActiveUsers - jdeš dnes na O?"), onPressed: () {}),
             // TODO endpoint
             // TODO send
             TextButton(child: const Text("getUserForLunch - chci na O teď"), onPressed: () {}),

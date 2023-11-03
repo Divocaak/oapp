@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:oapp/general/authentication.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,8 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int userId = 1;
-
   @override
   Widget build(BuildContext context) => Scaffold(
           body: Center(
@@ -18,7 +17,11 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-            Text("userId: $userId"),
+            Text("name: ${Authentication.loggedInUser?.displayName}"),
+            Text("email: ${Authentication.loggedInUser?.email}"),
+            Text("uid: ${Authentication.loggedInUser?.uid}"),
+            Text("deviceId: ${Authentication.deviceId}"),
+            TextButton(child: const Text("logout"), onPressed: () async => await Authentication.signOut(context)),
             TextButton(child: const Text("lat long"), onPressed: () async => print(await determinePosition())),
             // TODO send
             TextButton(

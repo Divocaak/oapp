@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:oapp/general/notification_handler.dart';
 import 'package:oapp/pages/signin.dart';
-
-// TODO ios settings from firebase console: https://console.firebase.google.com/u/0/project/oapp-50c16/settings/general/ios:cz.ocompany.oapp
 
 void main() async {
   /* WidgetsBinding widgetsBinding =  */ WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await NotificationHandler.initializeNotificationHandler();
 
   //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 

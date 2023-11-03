@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:oapp/general/authentication.dart';
+import 'package:oapp/general/notification_handler.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +10,17 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+// TODO fcm xcode configuration
+// https://firebase.google.com/docs/cloud-messaging/flutter/client#ios
+
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    print(NotificationHandler.token);
+    super.initState();
+    NotificationHandler.setupInteractedMessage();
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
           body: Center(

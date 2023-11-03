@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '949824855702',
     projectId: 'oapp-50c16',
     storageBucket: 'oapp-50c16.appspot.com',
+    androidClientId: '949824855702-7pmn6vgfv2tp8c61cdi2g80pr7blahst.apps.googleusercontent.com',
+    iosClientId: '949824855702-9r4f9v5sefja1th73ds2gbk5cn5e84pt.apps.googleusercontent.com',
     iosBundleId: 'cz.ocompany.oapp',
   );
 }
